@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import users from './src/assets/data/users.json';
 
 @Component({
   selector: 'dm-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+  <div><h1>{{pageTitle}}</h1>
+    <dm-employee></dm-employee>
+</div>
+  `
 })
+
 export class AppComponent {
-  title = 'timesheet-new';
+  pageTitle: string ='Employee Timesheet';
 }

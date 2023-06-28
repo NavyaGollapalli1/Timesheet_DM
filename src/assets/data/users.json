@@ -1,0 +1,50 @@
+[
+    {
+        "userId": 1,
+        "firstName": "azeerr",
+        "lastName": "singh",
+        "email": "abcd@abc.com"
+    },
+    {
+        "userId": 2,
+        "firstName": "test",
+        "lastName": "data",
+        "email": "asss@abc.com"
+    },
+    {
+        "userId": 3,
+        "firstName": "nav",
+        "lastName": "go",
+        "email": "yhbvf@abc.com"
+    },
+    {
+        "userId": 4,
+        "firstName": "mic",
+        "lastName": "el",
+        "email": "thdcv@abc.com"
+    },
+    {
+        "userId": 5,
+        "firstName": "mic",
+        "lastName": "el",
+        "email": "thdcv1@abc.com"
+    },
+    {
+        "userId": 6,
+        "firstName": "mic",
+        "lastName": "el",
+        "email": "thdcv2@abc.com"
+    },
+    {
+        "userId": 7,
+        "firstName": "mic",
+        "lastName": "el",
+        "email": "thdcv3@abc.com"
+    },
+    {
+        "userId": 8,
+        "firstName": "mic",
+        "lastName": "el",
+        "email": "thdcv4@abc.com"
+    }
+]
