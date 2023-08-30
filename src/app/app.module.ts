@@ -8,13 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeesService } from './employee/employees.service';
+import { EmployeeDetailComponent } from './employee/employee-detail.component';
+import { RouterModule } from '@angular/router';
+
 // import { UserServiceService } from './user-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
-    FilterPipe 
+    FilterPipe,
+    EmployeeDetailComponent
+    
 
   ],
   imports: [
@@ -22,7 +27,14 @@ import { EmployeesService } from './employee/employees.service';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    // UserServiceService
+    RouterModule.forRoot([
+      {path: 'user', component: EmployeeListComponent},
+      {path: 'user/id', component: EmployeeDetailComponent},
+      //{path: 'welcome', component: WelcomeComponent},
+      //{path: '', redirectTo: 'welcome', pathMatch: 'full'},
+      //{path: '**', redirectTo: 'welcome', pathMatch: 'full'}
+    ])
+   
   ],
   providers: [EmployeesService],
   bootstrap: [AppComponent]

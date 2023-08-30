@@ -17,17 +17,17 @@ export class EmployeesService {
 
 
 
-     getUsers() {
+     getUsers(): Observable<IUser[]> {
           console.log('getMyUsers++++++++++++ ' + this.usersUrl);
           return this.http.get<IUser[]>(this.usersUrl).pipe(
                map((res => {
-                    const users = [];
+                    const user = [];
                     for (const key in res) {
                          if (res.hasOwnProperty(key))
-                              users.push({ ...res[key], id: res })
-
+                              user.push({ ...res[key], id: res })
+                         catchError(this.handleError)
                     }
-                    return users;
+                    return user;
                }
 
                ))
@@ -52,12 +52,7 @@ export class EmployeesService {
 
      
 
-     // getEmployees(): Observable<IEmployee[]> {
-     //      return this.http.get<IEmployee[]>(this.employeeUrl).pipe(
-     //           tap(data => console.log('All: ', JSON.stringify(data))),
-     //           catchError(this.handleError)
-     //      );
-     // }
+   
 
      private handleError(err: HttpErrorResponse) {
           //in a real world app, we may send the server to some remote logging infrastructure
