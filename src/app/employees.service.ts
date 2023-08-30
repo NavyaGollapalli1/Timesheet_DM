@@ -1,24 +1,22 @@
 import { Injectable } from "@angular/core";
-// import { IEmployee } from "./employee";
-
 import { Observable, catchError, map, tap, throwError } from "rxjs";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { IUser } from "../user";
+import { IUser } from "./user";
+import { UserForm } from "./userform";
+import { Myuser } from "./shared/MyUser";
 
 @Injectable({
      providedIn: 'root'
+     
 })
 
 export class EmployeesService {
-     private employeeUrl = 'http://localhost:8080/users/';
      private usersUrl = 'http://localhost:8080/users/';
-     private usersDataURL = './assets/data/users.json';
      constructor(private http: HttpClient) { }
 
 
 
      getUsers(): Observable<IUser[]> {
-          console.log('getMyUsers++++++++++++ ' + this.usersUrl);
           return this.http.get<IUser[]>(this.usersUrl).pipe(
                map((res => {
                     const user = [];
@@ -34,8 +32,8 @@ export class EmployeesService {
           );
      }
 
-     createUsers(user:{"firstName": string,"lastName": string,"email": string,"password":string,"active":boolean}) {
-          console.log('getMyUsers++++++++++++ ' + this.usersUrl);
+     createUsers(user:Myuser) {
+          user.active=true;
           this.http.post<{name:string}>(this.usersUrl,user).subscribe(
                (res)=>{
                     console.log(res);
@@ -45,7 +43,6 @@ export class EmployeesService {
      }
 
      deleteUser(userId:string) {
-          console.log('getMyUsers++++++++++++ ' + this.usersUrl);
           this.http.delete(this.usersUrl+userId).subscribe();
           
      }

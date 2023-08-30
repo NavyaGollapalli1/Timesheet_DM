@@ -1,26 +1,30 @@
+
+
 import { Component, OnDestroy, OnInit } from "@angular/core";
 
-import { EmployeesService } from "./employees.service";
+import { EmployeesService } from "../employees.service";
 import { Subscription } from "rxjs";
 import { IUser } from "../user";
+import { CreateEmployeeComponent } from "../create-employee/create-employee.component";
 
 @Component({
-    
-    templateUrl: './employee-list.component.html',
-    styleUrls: ['./employee-list.component.css'],
+    selector: 'dm-employees-list',
+    templateUrl: './employees-list.component.html',
+    styleUrls: ['./employees-list.component.css'],
     providers: [EmployeesService]
 })
 export class EmployeeListComponent implements OnInit, OnDestroy {
-   
+
+
     sub!: Subscription;
     _users: IUser[] = [];
 
-    
-     errorMessage: any;
 
-      constructor(private employeesService: EmployeesService) {
+    errorMessage: any;
 
-     }
+    constructor(private employeesService: EmployeesService) {
+
+    }
 
 
     ngOnInit(): void {
@@ -28,16 +32,15 @@ export class EmployeeListComponent implements OnInit, OnDestroy {
         this.employeesService.getUsers().subscribe(
             (user) => {
                 this._users = user;
-                error: (err: any) => this.errorMessage =err
+                error: (err: any) => this.errorMessage = err
             }
         );
+        
     }
 
     ngOnDestroy(): void {
-        this.sub.unsubscribe();
-        throw new Error("Method not implemented.");
     }
 
 
-    
+
 }

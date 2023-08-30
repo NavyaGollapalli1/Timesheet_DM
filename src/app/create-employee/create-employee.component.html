@@ -1,0 +1,38 @@
+
+<div class= col-md-8 order-md-1>
+    <h4>Create a new employee</h4>
+</div>
+
+<div class="row">
+    <form  [formGroup]="userForm" (ngSubmit)="createEmployee()">
+       <div class = "col-md-8">
+        
+        <table >
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" formControlName="firstName"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" formControlName="lastName"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" formControlName="email"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" formControlName="password"></td>
+            </tr>
+            
+   
+            <tr>
+                <td><button type="submit">Submit</button></td>
+                
+            </tr>
+        </table>
+    </div>
+
+    </form>
+</div>
+

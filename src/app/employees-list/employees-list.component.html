@@ -1,14 +1,8 @@
-
-<div class='card-body'>
-    <div class='row'>
-        
-    
-    
-  <!-- <button type="button" class="btn1 btn btn-primary float-left">Add New Employee</button> -->
+<div class='table-responsive'>
+    <div class='table'>
 
 
-
-<table datatable class="table row-border hover" >
+<table datatable class="centre table table-bordered" >
     <thead>
       <tr>
         <th>UserId</th>
@@ -21,11 +15,16 @@
     <tbody>
       <tr *ngFor="let user of _users">
         <td> {{ user.userId}}</td>
-        <td> {{ user.firstName}}</td>
+        <td>  <a [routerLink]="['/user', user.userId]" >
+        {{user.firstName}}
+      </a>
+    </td>
+       
         <td> {{ user.lastName}}</td>
         <td> {{ user.email}}</td>
         <td>{{user.actions}}
-            <a class="btn btn-success">Edit</a>
+            <a [routerLink] = "['/user',user.userId ]" class="btn btn-success">Edit</a> 
+            <!-- <a [routerLink]="" (click)="openFirstName(userForm)">{{user.firstName}}</a> -->
             <!-- <a class="btn btn-danger">Update</a> -->
 
         </td>
