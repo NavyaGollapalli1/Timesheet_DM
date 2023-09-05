@@ -4,6 +4,12 @@ export interface IUser{
         "firstName": string,
         "lastName": string,
         "email": string,
+        "password": String,
+        "mobileNumber": number,
+        "contract": String,
+        "designation": String,
+        "address":" ",
+        
         "actions": string
 
 }

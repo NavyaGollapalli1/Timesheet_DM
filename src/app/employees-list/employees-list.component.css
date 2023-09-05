@@ -1,8 +1,12 @@
 
-.centre{
-    margin-left: 70px;
-    margin-right: 65px;
-    
-}
-
+table, th, td {    
+    border: 0.5 solid black;  
+    margin-left: auto;  
+    margin-right: auto; 
+    margin-top: 70px; 
+    border-collapse: collapse;    
+    width: 1000px;  
+    text-align: center;  
+    font-size: 15px;  
+    }    
 

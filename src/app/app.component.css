@@ -1,12 +1,21 @@
- .container {
+ .col {
     position: sticky;
     top: 0;
-    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+     padding: 50 ;  
+     width: 1000px; ;
     background-color: #3f51b5;
     color: #fff;
-    display: flex;
-    padding: 0 16px;
-    align-items: center;
-    height: 56px;
-    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    align-items: center; 
+    height: 40px;
+    text-align: center;  
+    font:  17px Roboto, "Helvetica Neue", sans-serif;
   } 
+
+  a:hover {
+    background-color: grey;
+    
+  }
+
+  
