@@ -14,14 +14,14 @@ export class CreateEmployeeComponent implements OnInit, OnDestroy {
 
   private user: Myuser = new Myuser();
   userForm = new FormGroup({
-    firstName: new FormControl(null,[Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-    lastName: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-    email: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-    password: new FormControl(null,[Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-    mobileNumber: new FormControl(null,[Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-    contract: new FormControl(null,[Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-    designation: new FormControl(null,[Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-    address: new FormControl(null)
+    firstName: new FormControl(),
+    lastName: new FormControl(),
+    email: new FormControl(),
+    password: new FormControl(),
+    mobileNumber: new FormControl(),
+    contract: new FormControl(),
+    designation: new FormControl(),
+    address: new FormControl()
   });
  
 
@@ -42,7 +42,7 @@ export class CreateEmployeeComponent implements OnInit, OnDestroy {
   }
 
    createEmployee() {
-    // this.user = <Myuser>this.userForm.value;
+     this.user = <Myuser>this.userForm.value;
      this.employeesService.createUsers(this.user);
 
    }

@@ -9,6 +9,6 @@ export class Myuser {
          "contract": String
          "designation": String
          "address":" "
-         "active": true
+        "active": boolean
 
   }
