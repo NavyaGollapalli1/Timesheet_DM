@@ -1,54 +1,139 @@
+<dm-success-alert *ngIf="showSuccess"></dm-success-alert>
+<dm-success-alert *ngIf="showEmptyFormAlert"></dm-success-alert>
 
-<div class= col-md-8 order-md-1>
-    <h4>Create a new employee</h4>
+<div class=col-md-8 order-md-1>
+    <h4>New Employee Registration</h4>
 </div>
 
 <div class="row">
-    <form  [formGroup]="userForm" (ngSubmit)="createEmployee()">
-       <div class = "col-md-8">
-        
-        <table >
-            <tr>
-                <td>First Name</td>
-                <td><input type="text" id = "firstName" formControlName="firstName"></td>
-            
-            <tr>
-                <td>Last Name</td>
-                <td><input type="text" id="lastName" formControlName="lastName"></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="text" id="email" formControlName="email"></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="text" id="password" formControlName="password"></td>
-            </tr>
-            <tr>
-                <td>Mobile Number</td>
-                <td><input type="text"  id ="mobileNumber" formControlName="mobileNumber"></td>
-            </tr>
-            <tr>
-                <td>Contract</td>
-                <td><input type="text" id= "contract" formControlName="contract"></td>
-            </tr>
-            <tr>
-                <td>Designation</td>
-                <td><input type="text" id="designation" formControlName="designation"></td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td><input type="text" id="address" formControlName="address"></td>
-            </tr>
-            
-   
-            <tr>
-                <td><button type="submit" >Submit</button></td>
-                
-            </tr>
-        </table>
-    </div>
+    <form class="border-class" [formGroup]="userForm" (ngSubmit)="createEmployee()">
+        <div class="col-md-8">
 
+
+            <table>
+                <div class="input-container">
+
+                    <tr>
+                        <div class="input-group">
+                            <td>First Name</td>
+                            <td><input type="text" id="firstName" placeholder="Please enter first name"
+                                    formControlName="firstName">
+                                <br><span style="color: red;"
+                                    *ngIf="firstName && firstName.invalid &&firstName.touched">Please enter valid first
+                                    name</span>
+                                <br>
+                            </td>
+
+                        </div>
+                    </tr>
+
+
+                    <tr>
+                        <div class="input-group">
+                            <td>Last Name</td>
+                            <td><input type="text" id="lastName" placeholder="Please enter last name"
+                                    formControlName="lastName">
+                                <br><span style="color: red;"
+                                    *ngIf="lastName && lastName.invalid &&lastName.touched">Please enter valid last
+                                    name</span>
+                                <br>
+                            </td>
+
+                        </div>
+                    </tr>
+
+
+                    <tr>
+                        <div class="input-group">
+                            <td>Email</td>
+                            <td><input type="text" id="email" placeholder=" ex: example@email.com"
+                                    formControlName="email">
+                                <br><span style="color: red;" *ngIf="email && email.invalid &&email.touched">Please
+                                    enter valid Email</span>
+                                <br>
+                            </td>
+
+                        </div>
+                    </tr>
+
+
+                    <tr>
+                        <div class="input-group">
+                            <td>Password</td>
+                            <td><input type="text" id="password" placeholder="Please enter valid Password"
+                                    formControlName="password">
+                                <br><span style="color: red;"
+                                    *ngIf="password && password.invalid &&password.touched">Please enter valid
+                                    Password</span>
+                                <br>
+                            </td>
+
+                        </div>
+                    </tr>
+
+
+                    <tr>
+                        <div class="input-group">
+                            <td>Mobile Number</td>
+                            <td><input type="text" id="mobileNumber" placeholder="ex: +00000000000"
+                                    formControlName="mobileNumber">
+                                <br><span style="color: red;"
+                                    *ngIf="mobileNumber && mobileNumber.invalid &&mobileNumber.touched">Please enter
+                                    valid Mobile Number Format Ex: +00000000000</span>
+                                <br>
+                            </td>
+
+                        </div>
+                    </tr>
+
+
+                    <tr>
+                        <div class="input-group">
+                            <div class="select-container">
+                                <td>Contract</td>
+
+                                <td> <select formControlName="contract">
+                                        <option>Choose contract type</option> <br>
+                                        <option *ngFor="let Contract of contractOption">{{Contract}}</option>
+                                    </select> </td>
+                            </div>
+                        </div>
+                    </tr>
+
+
+
+                    <tr>
+                        <div class="input-group">
+                            <td>Designation</td>
+                            <td><input type="text" class="input-group" id="designation" formControlName="designation">
+                            </td><br>
+                        </div>
+                    </tr>
+
+
+                    <tr>
+
+                        <div class="input-group">
+                            <td>Address</td>
+                            <td><input type="text" id="address" formControlName="address"><br></td>
+                        </div>
+                    </tr>
+                    <br>
+                </div>
+            </table>
+                    <tr>
+                        <td><button  type="submit" id="submit">Create New Employee</button></td>
+                        <!-- <dm-success-alert *ngIf="showEmptyFormAlert"></dm-success-alert> 
+                        <span style="color: red;" *ngIf="showEmptyFormAlert">Please enter valid Inputs</span>-->
+                    </tr>
+
+
+              
+        </div>
     </form>
-</div>
 
+
+   
+
+
+</div>

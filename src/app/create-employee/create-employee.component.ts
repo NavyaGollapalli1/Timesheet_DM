@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EmployeesService } from '../employees.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Myuser } from '../shared/MyUser';
-
+import { SuccessAlertComponent } from '../success-alert/success-alert.component';
 
 @Component({
   selector: 'dm-create-employee',
@@ -10,42 +10,99 @@ import { Myuser } from '../shared/MyUser';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit, OnDestroy {
- 
 
-  private user: Myuser = new Myuser();
+  showSuccess = false;
+  showEmptyFormAlert = false;
+
   userForm = new FormGroup({
-    firstName: new FormControl(),
-    lastName: new FormControl(),
-    email: new FormControl(),
-    password: new FormControl(),
-    mobileNumber: new FormControl(),
+    firstName: new FormControl('', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]+'), Validators.minLength(2), Validators.maxLength(30)])),
+    lastName: new FormControl('', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]+'), Validators.minLength(2), Validators.maxLength(30)])),
+    email: new FormControl('', Validators.compose([Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])),
+    password: new FormControl('', Validators.compose([Validators.required, Validators.minLength(8)])),
+    mobileNumber: new FormControl('', Validators.compose([Validators.required, Validators.pattern(/^\+\d{11}$/), Validators.maxLength(16)])),
     contract: new FormControl(),
     designation: new FormControl(),
     address: new FormControl()
   });
- 
+
+  isSubmitted = false;
+  contractOption: string[] = ['FullTime', 'PartTime'];
+
+  changecontractOption(c: any) {
+    console.log(c.value)
+    this.contract?.setValue(c.target.value, {
+      onlySelf: true
+    })
+  }
+
+
+
+  get firstName() {
+    return this.userForm.get('firstName');
+  }
+  get lastName() {
+    return this.userForm.get('lastName');
+  }
+  get email() {
+    return this.userForm.get('email');
+  }
+  get password() {
+    return this.userForm.get('password')
+  }
+  get mobileNumber() {
+    return this.userForm.get('mobileNumber')
+  }
+  get contract() {
+    return this.userForm.get('contract')
+  }
 
 
   constructor(private employeesService: EmployeesService) {
-
   }
 
   ngOnInit(): void {
   }
-  
- 
-  
-
 
   ngOnDestroy(): void {
-    
+
   }
 
-   createEmployee() {
-     this.user = <Myuser>this.userForm.value;
-     this.employeesService.createUsers(this.user);
+  createEmployee() {
 
-   }
+    var formValues = this.userForm.value;
+    var newEmployee = new Myuser(formValues.firstName, formValues.lastName, formValues.email, formValues.password, formValues.mobileNumber,
+      formValues.contract, formValues.designation, true);
+    this.employeesService.createUsers(newEmployee);
 
-  
+  }
+
+  showAlert(): void {
+    if (this.userForm.invalid) {
+      this.userForm.markAllAsTouched();
+      this.showEmptyFormAlert = true;
+      alert("Form failed to submittted");
+      return;
+
+
+    }
+  }
+  onSubmit() {
+
+
+
+    // if (this. userForm.invalid) {
+    //   this.userForm.markAllAsTouched();
+    //   this.showEmptyFormAlert = true;
+    //   alert("form submittted");
+    //   return;
+    // }
+    // Logic for submitting the form
+
+    // After successful submission, set showSuccess to true
+    //  this.showSuccess = true;
+
+    // setTimeout(() => {
+    //   this.showSuccess = false;
+    // }, 3000);
+  }
 }

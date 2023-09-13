@@ -17,6 +17,7 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { EmployeeListComponent } from './employees-list/employees-list.component';
 import { EmployeesService } from './employees.service';
 import { MyTimesheetComponent } from './my-timesheet/my-timesheet.component';
+import { SuccessAlertComponent } from './success-alert/success-alert.component';
 
 
 
@@ -31,7 +32,8 @@ import { MyTimesheetComponent } from './my-timesheet/my-timesheet.component';
    EmployeeDetailsComponent,
     CreateEmployeeComponent,
    EmployeeListComponent,
-   MyTimesheetComponent
+   MyTimesheetComponent,
+   SuccessAlertComponent
   // EmployeesService
 
   ],
@@ -47,6 +49,7 @@ import { MyTimesheetComponent } from './my-timesheet/my-timesheet.component';
       { path: 'create-employee', component: CreateEmployeeComponent },
       { path: 'employee-details', component: EmployeeDetailsComponent },
       {path: 'my-timesheet', component: MyTimesheetComponent},
+      {path: 'success-alert', component:SuccessAlertComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])

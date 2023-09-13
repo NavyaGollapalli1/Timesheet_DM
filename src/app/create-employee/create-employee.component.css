@@ -1,4 +1,145 @@
-.center {
-    display: flex;
-    justify-content: center;
-  }
+ /* table{
+  text-align: centre;
+  
+}  */
+ 
+ 
+
+h4 {
+  color: #392F8B;
+font-family: Roboto;
+font-size: 35px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-top: 70px;
+margin-left: 500px;
+}
+
+select{
+width: 500px;
+height: 32px;
+flex-shrink: 0;
+
+
+margin-right: 10px;
+
+color: #221F1F;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+opacity: 0.5;
+}
+
+form{
+  margin-left: 200px;
+  margin-top: 50px;
+}
+
+Option{
+  
+  padding: 10 px;
+  opacity: 1.5;
+}
+
+.select-container{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+
+td{
+  color: #392F8B;
+font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-align: left;
+
+}
+
+input{
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 1px solid #392F8B; /* Add a border bottom to create the line effect */
+  font-size: 16px; 
+  width: 500px;
+  
+ 
+}
+
+.input-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 10px; /* Gap between cells */
+/* row-gap: 0.7px; */
+/* column-gap: 10px; */
+}
+
+  input-group{
+  display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+       text-align: left;
+}  
+
+input:focus {
+  border-bottom: 2px solid orange; 
+
+}
+
+span{
+  /* color: rgb(255, 0, 0); */
+font-family: Roboto;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 0px;
+opacity: 1.5;
+}
+
+
+
+option{
+  color: #221F1F;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0px;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+button{
+width: 500px;
+height: 42px;
+flex-shrink: 0;
+border-radius: 4px;
+background: #392F8B;
+
+color: #FFF;
+font-family: Roboto;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-left: 300px;
+margin-top: 50px;
+
+}
+
+
+button:hover {
+  background-color: orange;
+  border-radius: 50px;
+  position: relative;
+  padding: 1.5px;
+  
+} 

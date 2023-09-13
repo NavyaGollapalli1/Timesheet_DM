@@ -1,21 +1,37 @@
- .col {
-    position: sticky;
-    top: 0;
-    margin-right: auto;
-    margin-left: auto;
-     padding: 50 ;  
-     width: 1000px; ;
-    background-color: #3f51b5;
-    color: #fff;
-    align-items: center; 
-    height: 40px;
-    text-align: center;  
-    font:  17px Roboto, "Helvetica Neue", sans-serif;
-  } 
+
 
   a:hover {
-    background-color: grey;
+    background-color: orange;
+    border-radius: 50px;
+    position: relative;
+     padding: 5px; 
     
-  }
+  } 
 
-  
+  header {
+    background-color: #173170;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+
+
+

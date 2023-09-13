@@ -33,8 +33,17 @@ export class EmployeesService {
      }
 
      createUsers(user:Myuser) {
-          user.active=true;
           this.http.post<{name:string}>(this.usersUrl,user).subscribe(
+               (response)=>{
+                    console.log(response);
+                    alert('Employee created successfully');
+               }
+          );
+          
+     }
+
+     updateUsers(user:Myuser) {
+          this.http.put<{name:string}>(this.usersUrl,user).subscribe(
                (res)=>{
                     console.log(res);
                }
