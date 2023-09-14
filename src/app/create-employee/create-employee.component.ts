@@ -20,8 +20,8 @@ export class CreateEmployeeComponent implements OnInit, OnDestroy {
     email: new FormControl('', Validators.compose([Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])),
     password: new FormControl('', Validators.compose([Validators.required, Validators.minLength(8)])),
     mobileNumber: new FormControl('', Validators.compose([Validators.required, Validators.pattern(/^\+\d{11}$/), Validators.maxLength(16)])),
-    contract: new FormControl(),
-    designation: new FormControl(),
+    contract: new FormControl('', Validators.compose([Validators.required])),
+    designation: new FormControl('', Validators.compose([Validators.required])),
     address: new FormControl()
   });
 
@@ -55,6 +55,10 @@ export class CreateEmployeeComponent implements OnInit, OnDestroy {
   get contract() {
     return this.userForm.get('contract')
   }
+  get designation() {
+    return this.userForm.get('designation')
+  }
+
 
 
   constructor(private employeesService: EmployeesService) {

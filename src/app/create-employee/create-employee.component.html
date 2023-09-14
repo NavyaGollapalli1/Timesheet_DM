@@ -95,6 +95,9 @@
                                 <td> <select formControlName="contract">
                                         <option>Choose contract type</option> <br>
                                         <option *ngFor="let Contract of contractOption">{{Contract}}</option>
+                                       
+                                <br><span style="color: red;"
+                                    *ngIf="contract && contract.invalid &&contract.touched">Please choose your option</span>
                                     </select> </td>
                             </div>
                         </div>
@@ -106,6 +109,9 @@
                         <div class="input-group">
                             <td>Designation</td>
                             <td><input type="text" class="input-group" id="designation" formControlName="designation">
+                                <br><span style="color: red;"
+                                    *ngIf="designation &&designation.touched">Please enter the employee role</span>
+                                <br>
                             </td><br>
                         </div>
                     </tr>
@@ -132,8 +138,5 @@
         </div>
     </form>
 
-
    
-
-
 </div>

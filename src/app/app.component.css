@@ -8,10 +8,10 @@
     
   } 
 
-  header {
+   header {
     background-color: #173170;
     padding: 10px;
-}
+} 
 
 nav ul {
     list-style-type: none;
@@ -34,4 +34,17 @@ main {
 }
 
 
-
+.background-frame {
+  /* background: url('path_to_your_background_image.jpg') no-repeat center center fixed; */
+  background: #392F8B;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1627px;
+  border-radius: 8px;
+background: #FFF;
+flex-shrink: 0;
+  /* z-index: -1; To place it behind other content */
+}

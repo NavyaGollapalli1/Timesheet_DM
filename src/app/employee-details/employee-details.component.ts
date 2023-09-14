@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IUser } from '../user';
 
 @Component({
@@ -8,15 +8,17 @@ import { IUser } from '../user';
   styleUrls: ['./employee-details.component.css']
 })
 export class EmployeeDetailsComponent {
-pageTitle: string = 'Employee Detail';
-user: IUser | undefined;
-constructor(private route:ActivatedRoute) {
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
+
+  // showPage1(page: string) {
+  //   this.router.navigate(['/employees-list'], { relativeTo: this.route });
+   
+  // }
+  showPage2(page: string) {
+    this.router.navigate(['/create-employee'], { relativeTo: this.route });
+
+  }
+
 }
 
-
-
-ngOnInit(): void {
-  const id = Number(this.route.snapshot.paramMap.get('id'));
-  this.pageTitle += `: ${id}`;
-}
-}
