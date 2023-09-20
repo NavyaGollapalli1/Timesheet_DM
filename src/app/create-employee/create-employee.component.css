@@ -1,19 +1,29 @@
- /* table{
+ table{
   text-align: centre;
+
   
-}  */
+}  
  
- 
+  .super-box{
+  margin:0 auto; 
+width:1200px ;
+padding:8px; 
+background:#f9f9f9;
+border:2px solid grey;
+opacity: 0.5px;
+ margin-top: 7px; 
+
+ } 
 
 h4 {
   color: #392F8B;
 font-family: Roboto;
-font-size: 35px;
+font-size: 32px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-margin-top: 70px;
-margin-left: 500px;
+/* margin-top: 10px; */
+margin-left: 400px;
 }
 
 select{
@@ -35,8 +45,8 @@ opacity: 0.5;
 }
 
 form{
-  margin-left: 200px;
-  margin-top: 50px;
+  margin-left: 80px;
+  margin-top: 10px;
 }
 
 Option{
@@ -48,16 +58,16 @@ Option{
 .select-container{
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  /* margin-bottom: 5px; */
 }
 
 
 td{
   color: #392F8B;
 font-family: Roboto;
-font-size: 20px;
+font-size: 15px;
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 line-height: normal;
 text-align: left;
 
@@ -67,7 +77,7 @@ input{
   border: none;
   outline: none;
   background: none;
-  border-bottom: 1px solid #392F8B; /* Add a border bottom to create the line effect */
+  border-bottom: 0.5px solid #392F8B;/* Add a border bottom to create the line effect */
   font-size: 16px; 
   width: 500px;
   
@@ -85,7 +95,7 @@ input{
   input-group{
   display: flex;
         flex-direction: column;
-        margin-bottom: 10px;
+     
        text-align: left;
 }  
 
@@ -109,7 +119,7 @@ opacity: 1.5;
 option{
   color: #221F1F;
   font-family: Roboto;
-  font-size: 20px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 0px;
@@ -118,20 +128,20 @@ option{
 }
 
 button{
-width: 500px;
-height: 42px;
+width: 400px;
+height: 32px;
 flex-shrink: 0;
 border-radius: 4px;
 background: #392F8B;
 
 color: #FFF;
 font-family: Roboto;
-font-size: 22px;
+font-size: 20px;
 font-style: normal;
-font-weight: 400;
+font-weight: 500;
 line-height: normal;
 margin-left: 300px;
-margin-top: 50px;
+
 
 }
 

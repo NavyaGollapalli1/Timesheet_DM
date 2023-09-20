@@ -1,23 +1,54 @@
 
-<!-- <nav site-header sticky-top py-1>
-  <div class="row"> -->
-  
-<header>
-<nav>
-<div class="col d-flex flex-column flex-md-row justify-content-between">
-<ul>
- <li> <a class= "nav-link" href="/Home">Home</a></li>
- <!-- <li> <a class= "nav-link" href="/employees-list">Employee List</a></li> -->
- <li> <a class= "nav-link" href="/employee-details">Employee details</a></li>
- <!-- <li>  <a class= "nav-link" href="/create-employee">Add Employee</a></li> -->
- <li>  <a class= "nav-link" href="/my-timesheet">My Timesheet</a></li>
-</ul>
-</div>
-    <!-- </div> -->
-  
-</nav> 
+  <header>
+    <nav>
+      <div class="header topbar">
+        <div class="header-top-left">
+         <img src="./assets/LOGO.png">
+        </div>
+        <div class="header-top-left">
+          
+        </div>
+
+      </div>
+
+    </nav>
+    <body>
+      <div class="vertical-border-left"></div>
+      <div class="vertical-border-right"></div>
+
+    </body>
+    <nav>
+      <div class="header menubar">
+        <ul>
+          <li> <a class="nav-link" href="/dashboard">Dashboard</a></li>
+
+          <li> <a class="nav-link" href="/my-timesheet">My Timesheet</a></li>
+          <li> <a class="nav-link" href="/my-leave">My Leave</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="seperationline"></div>
+
+<div class="header buttonbar">
+  <nav>
+    <ul>
+      <div class="sub-header">
+        <li><p class="button-title">Employee Details</p>
+          <a class="nav-link" href="/employee-details">View Details</a></li>
+      </div>
+        <div class="sub-header">
+        <li> <p class="button-title">Manage Timesheet</p>
+          <a class="nav-link" href="/manage-timesheet">View Details</a></li>
+      </div>
+        <div class="sub-header">
+        <li><p class="button-title">Salary Simulation</p> 
+          <a class="nav-link" href="/Salary Simulation">View Details</a></li>
+      </div>
+    </ul>
+  </nav>
+  </div> 
+  <div class="seperationline"></div>
+
+
 </header>
-
-
 <router-outlet></router-outlet>
- 

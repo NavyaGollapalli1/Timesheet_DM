@@ -18,6 +18,8 @@ import { EmployeeListComponent } from './employees-list/employees-list.component
 import { EmployeesService } from './employees.service';
 import { MyTimesheetComponent } from './my-timesheet/my-timesheet.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
+import { MyLeaveComponent } from './my-leave/my-leave.component';
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 
 
 
@@ -33,7 +35,9 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
     CreateEmployeeComponent,
    EmployeeListComponent,
    MyTimesheetComponent,
-   SuccessAlertComponent
+   SuccessAlertComponent,
+   MyLeaveComponent,
+   EditEmployeeComponent
   // EmployeesService
 
   ],
@@ -51,7 +55,8 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
       {path: 'my-timesheet', component: MyTimesheetComponent},
       {path: 'success-alert', component:SuccessAlertComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+      {path:'/user,user:id', component:EditEmployeeComponent}
     ])
 
   ],

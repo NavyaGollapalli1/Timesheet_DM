@@ -1,6 +1,6 @@
-<dm-success-alert *ngIf="showSuccess"></dm-success-alert>
-<dm-success-alert *ngIf="showEmptyFormAlert"></dm-success-alert>
-
+ <!-- <dm-success-alert *ngIf="showSuccess"></dm-success-alert>
+<dm-success-alert *ngIf="showEmptyFormAlert"></dm-success-alert> --> 
+<div class="super-box">
 <div class=col-md-8 order-md-1>
     <h4>New Employee Registration</h4>
 </div>
@@ -110,7 +110,7 @@
                             <td>Designation</td>
                             <td><input type="text" class="input-group" id="designation" formControlName="designation">
                                 <br><span style="color: red;"
-                                    *ngIf="designation &&designation.touched">Please enter the employee role</span>
+                                    *ngIf="designation &&designation.invalid &&designation.touched">Please enter the employee role</span>
                                 <br>
                             </td><br>
                         </div>
@@ -129,8 +129,8 @@
             </table>
                     <tr>
                         <td><button  type="submit" id="submit">Create New Employee</button></td>
-                        <!-- <dm-success-alert *ngIf="showEmptyFormAlert"></dm-success-alert> 
-                        <span style="color: red;" *ngIf="showEmptyFormAlert">Please enter valid Inputs</span>-->
+                         <dm-success-alert *ngIf="showEmptyFormAlert"></dm-success-alert> 
+                        <span style="color: red;" *ngIf="showEmptyFormAlert">Please enter valid Inputs</span>
                     </tr>
 
 
@@ -138,5 +138,6 @@
         </div>
     </form>
 
-   
+</div>   
 </div>
+
