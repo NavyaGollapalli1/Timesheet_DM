@@ -1,3 +1,143 @@
-<div>
-    <h3>Edit Employee</h3>
-</div>
+ <!-- <dm-success-alert *ngIf="showSuccess"></dm-success-alert>
+<dm-success-alert *ngIf="showEmptyFormAlert"></dm-success-alert> --> 
+<div class="super-box">
+    <div class=col-md-8 order-md-1>
+        <h4>Update/Edit Employee</h4>
+        <a routerLink="/employees-list" class="btn btn-success float-end">Back</a>
+    </div>
+    
+    <div class="row">
+        <form class="border-class" [formGroup]="editForm" (ngSubmit)="editEmployee()">
+            <div class="col-md-8">
+    
+    
+                <table>
+                    <div class="input-container">
+    
+                        <tr>
+                            <div class="input-group">
+                                <td>First Name</td>
+                                <td><input type="text" [(ngModel)]="editUser.firstName" id="firstName" placeholder="Please enter first name"
+                                        formControlName="firstName">
+                                    <br><span style="color: red;"
+                                        *ngIf="firstName && firstName.invalid &&firstName.touched">Please enter valid first
+                                        name</span>
+                                    <br>
+                                </td>
+    
+                            </div>
+                        </tr>
+    
+    
+                        <tr>
+                            <div class="input-group">
+                                <td>Last Name</td>
+                                <td><input type="text" [(ngModel)]="user.lasttName" id="lastName" placeholder="Please enter last name"
+                                        formControlName="lastName">
+                                    <br><span style="color: red;"
+                                        *ngIf="lastName && lastName.invalid &&lastName.touched">Please enter valid last
+                                        name</span>
+                                    <br>
+                                </td>
+    
+                            </div>
+                        </tr>
+    
+    
+                        <tr>
+                            <div class="input-group">
+                                <td>Email</td>
+                                <td><input type="text" [(ngModel)]="user.email" id="email" placeholder=" ex: example@email.com"
+                                        formControlName="email">
+                                    <br><span style="color: red;" *ngIf="email && email.invalid &&email.touched">Please
+                                        enter valid Email</span>
+                                    <br>
+                                </td>
+    
+                            </div>
+                        </tr>
+    
+    
+                        <tr>
+                            <div class="input-group">
+                                <td>Password</td>
+                                <td><input type="text" [(ngModel)]="user.password" id="password" placeholder="Please enter valid Password"
+                                        formControlName="password">
+                                    <br><span style="color: red;"
+                                        *ngIf="password && password.invalid &&password.touched">Please enter valid
+                                        Password</span>
+                                    <br>
+                                </td>
+    
+                            </div>
+                        </tr>
+    
+    
+                        <tr>
+                            <div class="input-group">
+                                <td>Mobile Number</td>
+                                <td><input type="text" [(ngModel)]="user.mobileNumber" id="mobileNumber" placeholder="ex: +00000000000"
+                                        formControlName="mobileNumber">
+                                    <br><span style="color: red;"
+                                        *ngIf="mobileNumber && mobileNumber.invalid &&mobileNumber.touched">Please enter
+                                        valid Mobile Number Format Ex: +00000000000</span>
+                                    <br>
+                                </td>
+    
+                            </div>
+                        </tr>
+    
+    
+                        <tr>
+                            <div class="input-group">
+                                <div class="select-container">
+                                    <td>Contract</td>
+    
+                                    <td> <select formControlName="contract" [(ngModel)]="user.contract">
+                                            <option>Choose contract type</option> <br>
+                                            <option *ngFor="let Contract of contractOptions">{{Contract}}</option>
+                                           
+                                    <br><span style="color: red;"
+                                        *ngIf="contract && contract.invalid &&contract.touched">Please choose your option</span>
+                                        </select> </td>
+                                </div>
+                            </div>
+                        </tr>
+    
+    
+    
+                        <tr>
+                            <div class="input-group">
+                                <td>Designation</td>
+                                <td><input type="text" [(ngModel)]="user.designation" class="input-group" id="designation" formControlName="designation">
+                                    <br><span style="color: red;"
+                                        *ngIf="designation &&designation.invalid &&designation.touched">Please enter the employee role</span>
+                                    <br>
+                                </td><br>
+                            </div>
+                        </tr>
+    
+    
+                        <tr>
+    
+                            <div class="input-group">
+                                <td>Address</td>
+                                <td><input type="text" [(ngModel)]="user.address" id="address" formControlName="address"><br></td>
+                            </div>
+                        </tr>
+                        <br>
+                    </div>
+                </table>
+                        <tr>
+                            <td><button  type="submit" id="submit">Update</button></td>
+                             
+    
+    
+                  
+            </div>
+        </form>
+    
+    </div>   
+    </div>
+    
+    

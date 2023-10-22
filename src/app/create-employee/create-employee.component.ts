@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EmployeesService } from '../employees.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Myuser } from '../shared/MyUser';
-import { SuccessAlertComponent } from '../success-alert/success-alert.component';
 
 @Component({
   selector: 'dm-create-employee',
@@ -12,6 +11,7 @@ import { SuccessAlertComponent } from '../success-alert/success-alert.component'
 export class CreateEmployeeComponent implements OnInit, OnDestroy {
 
   showSuccess = false;
+  
   showEmptyFormAlert = false;
 
   userForm = new FormGroup({
@@ -80,16 +80,16 @@ export class CreateEmployeeComponent implements OnInit, OnDestroy {
 
   }
 
-  showAlert(): void {
-    if (this.userForm.invalid) {
-      this.userForm.markAllAsTouched();
-      this.showEmptyFormAlert = true;
-      alert("Form failed to submittted");
-      return;
+  // showAlert(): void {
+  //   if (this.userForm.invalid) {
+  //     this.userForm.markAllAsTouched();
+  //     this.showEmptyFormAlert = true;
+  //     alert("Form failed to submittted");
+  //     return;
 
 
-    }
-  }
+  //   
+  // }
   onSubmit() {
 
 

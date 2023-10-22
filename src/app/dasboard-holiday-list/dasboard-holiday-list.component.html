@@ -1,0 +1,15 @@
+<!-- Display existing holidays -->
+<ul>
+    <li *ngFor="let holiday of holidays">{{ holiday.name }} - {{ holiday.date | date }}</li>
+  </ul>
+  
+  <!-- Add a new holiday -->
+  <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+    <label for="name">Holiday Name:</label>
+    <input id="name" name="name" ngModel required>
+  
+    <label for="date">Holiday Date:</label>
+    <input id="date" name="date" type="date" ngModel required>
+  
+    <button type="submit">Add Holiday</button>
+  </form>

@@ -12,6 +12,9 @@ import { Myuser } from "./shared/MyUser";
 
 export class EmployeesService {
      private usersUrl = 'http://localhost:8080/users/';
+    slice: any;
+     MyUser: any;
+ 
      constructor(private http: HttpClient) { }
 
 
@@ -32,6 +35,10 @@ export class EmployeesService {
           );
      }
 
+     getUser(userId: number){
+          return this.http.get(`http://localhost:8080/users/edit/${userId}`);
+     }
+
      createUsers(user:Myuser) {
           this.http.post<{name:string}>(this.usersUrl,user).subscribe(
                (response)=>{
@@ -43,6 +50,7 @@ export class EmployeesService {
      }
 
      updateUsers(user:Myuser) {
+          
           this.http.put<{name:string}>(this.usersUrl,user).subscribe(
                (res)=>{
                     console.log(res);
@@ -56,6 +64,7 @@ export class EmployeesService {
           
      }
 
+   
      
 
    

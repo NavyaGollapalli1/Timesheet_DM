@@ -8,8 +8,8 @@
   margin:0 auto; 
 width:1200px ;
 padding:8px; 
-background:#f9f9f9;
-border:2px solid grey;
+background: white;
+/* border:2px solid grey;  */
 opacity: 0.5px;
  margin-top: 7px; 
 
@@ -17,13 +17,19 @@ opacity: 0.5px;
 
 h4 {
   color: #392F8B;
-font-family: Roboto;
+/* font-family: Roboto; */
 font-size: 32px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-/* margin-top: 10px; */
-margin-left: 400px;
+ margin-top: 10px; 
+margin-left: 350px;
+margin-bottom: 25px;
+}
+
+.back-button{
+  margin-left: 1050px;
+  
 }
 
 select{
@@ -35,7 +41,7 @@ flex-shrink: 0;
 margin-right: 10px;
 
 color: #221F1F;
-font-family: Roboto;
+/* font-family: Roboto; */
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
@@ -64,10 +70,10 @@ Option{
 
 td{
   color: #392F8B;
-font-family: Roboto;
-font-size: 15px;
+/* font-family: Roboto; */
+font-size: 18px;
 font-style: normal;
-font-weight: 600;
+font-weight: 500;
 line-height: normal;
 text-align: left;
 
@@ -106,7 +112,7 @@ input:focus {
 
 span{
   /* color: rgb(255, 0, 0); */
-font-family: Roboto;
+/* font-family: Roboto; */
 font-size: 15px;
 font-style: normal;
 font-weight: 400;
@@ -118,7 +124,7 @@ opacity: 1.5;
 
 option{
   color: #221F1F;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -135,10 +141,10 @@ border-radius: 4px;
 background: #392F8B;
 
 color: #FFF;
-font-family: Roboto;
+/* font-family: Roboto; */
 font-size: 20px;
 font-style: normal;
-font-weight: 500;
+font-weight: 400;
 line-height: normal;
 margin-left: 300px;
 

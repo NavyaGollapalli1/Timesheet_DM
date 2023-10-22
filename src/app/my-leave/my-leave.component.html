@@ -1,1 +1,30 @@
-<p>my-leave works!</p>
+<!-- Display existing leaves -->
+<div class = super-box>
+<ul>
+    <li *ngFor="let leave of leaves">
+      {{ leave.leaveType }} - {{ leave.startDate | date }} to {{ leave.endDate | date }} (Reason: {{ leave.reason }})
+    </li>
+  </ul>
+  
+  <!-- Request a new leave -->
+  <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+    
+    <label for="leaveType">Leave Type:</label>
+    <input id="type" name="type" ngModel required>
+    <br>
+  
+    <label for="startDate">Start Date:</label>
+    <input id="startDate" name="startDate" type="date" ngModel required>
+    <br>
+
+    <label for="endDate">End Date:</label>
+    <input id="endDate" name="endDate" type="date" ngModel required>
+    <br>
+
+    <label for="reason">Reason:</label>
+    <textarea id="reason" name="reason" ngModel required></textarea>
+    <br>
+
+    <button type="submit">Request Leave</button>
+  </form>
+</div>

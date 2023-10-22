@@ -23,5 +23,6 @@ export class Myuser {
          "designation": String
          "address":" "
         "active": true
+        "userId":number
 
   }

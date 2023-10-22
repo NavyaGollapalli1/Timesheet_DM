@@ -1,0 +1,21 @@
+<form>
+    <label for="weekStartDate">Select a week:</label>
+    <input type="date" id="weekStartDate" [(ngModel)]="selectedWeekStartDate" name="weekStartDate">
+    <button type="submit" (click)="changeWeek()">Go</button>
+
+  </form>
+  <br>
+    <form (ngSubmit)="submitTimesheet()">
+      <label for="date">Date:</label>
+      <input type="date" id="date" [(ngModel)]="timesheet.date" name="date" required>
+    
+      <label for="hoursWorked">Hours Worked:</label>
+      <input type="number" id="hoursWorked" [(ngModel)]="timesheet.hoursWorked" name="hoursWorked" required>
+    
+      <label for="task">Task:</label>
+      <input type="text" id="task" [(ngModel)]="timesheet.task" name="task" required>
+    
+      <!-- Add more fields as needed (e.g., project, comments, etc.) -->
+    
+      <button type="submit">Submit</button>
+    </form>

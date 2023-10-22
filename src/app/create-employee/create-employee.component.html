@@ -2,7 +2,9 @@
 <dm-success-alert *ngIf="showEmptyFormAlert"></dm-success-alert> --> 
 <div class="super-box">
 <div class=col-md-8 order-md-1>
+    <a routerLink="/employee-details" class="back-button">Back</a>
     <h4>New Employee Registration</h4>
+   
 </div>
 
 <div class="row">
@@ -129,7 +131,7 @@
             </table>
                     <tr>
                         <td><button  type="submit" id="submit">Create New Employee</button></td>
-                         <dm-success-alert *ngIf="showEmptyFormAlert"></dm-success-alert> 
+                       
                         <span style="color: red;" *ngIf="showEmptyFormAlert">Please enter valid Inputs</span>
                     </tr>
 

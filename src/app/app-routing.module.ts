@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EmployeeListComponent } from './employees-list/employees-list.component';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
-import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
+
 
 const routes: Routes = [
  
@@ -12,8 +12,8 @@ children:[
   {path:'employees-list', component:EmployeeListComponent},
   {path:'create-employee', component:CreateEmployeeComponent},
 ]},
-   {path:'', redirectTo:'/employees-list', pathMatch:'full'},
-  
+   {path:'', redirectTo:'employees-list', pathMatch:'full'},
+   
   
 
 ];

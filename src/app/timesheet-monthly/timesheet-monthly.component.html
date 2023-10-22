@@ -1,0 +1,51 @@
+<table class="table-responsive">
+<thead>
+<tr>
+  <div class="monthly-timesheet"></div>
+<th>Employee Name</th>
+<th  *ngFor="let day of daysInMonth; let i = index">
+  
+  <label for="day{{ day.date.getDate() }}">{{ day.date | date:'EE' }} 
+    <br>
+     {{ day.date | date:'dd' }}  </label>  
+    <input type="number" 
+         id="day{{ day.date.getDate() }}"
+         [(ngModel)]="day.hoursWorked"
+          name="day{{ day.date.getDate() }}">  
+
+
+  <!-- <input type="number" [(ngModel)]="Monday"> 
+   <input type="number" [(ngModel)]="Tuesday"> 
+   <input type="number" [(ngModel)]="Wednesday"> 
+   <input type="number" [(ngModel)]="Thursday"> 
+   <input type="number" [(ngModel)]="Friday"> 
+   <input type="number" [(ngModel)]="Saturday" [disabled]="isWeekend"> 
+   <input type="number" [(ngModel)]="Sunday" [disabled]="isWeekend">   -->
+</th>
+
+
+<div> 
+  <th>Total days</th>
+  <td><input type="number"></td>
+</div>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let user of _users">
+    <td>{{user.firstName}}</td>
+    <td></td>
+    </tr>
+</tbody>
+</table>
+
+
+<form (ngSubmit)="calculateTotalDays()">
+   <!-- <input type="number" [(ngModel)]="Monday"> 
+   <input type="number" [(ngModel)]="Tuesday"> 
+   <input type="number" [(ngModel)]="Wednesday"> 
+   <input type="number" [(ngModel)]="Thursday"> 
+   <input type="number" [(ngModel)]="Friday"> 
+   <input type="number" [(ngModel)]="Saturday" [disabled]="isWeekend"> 
+   <input type="number" [(ngModel)]="Sunday" [disabled]="isWeekend">  -->
+    <button type="submit">Submit</button>
+  </form>

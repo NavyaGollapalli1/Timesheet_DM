@@ -1,35 +1,66 @@
 <div class='table-responsive'>
     <div class='table'>
+      <div class='super-box'>
+
+<!-- <div>
+  <select (change)="onTableSizeChange($event)">
+    <option *ngFor="let size of tableSizePerPage">
+    Employees Per Page  {{size}}</option> 
+  </select> -->
+
+  <div class='table body'>
+
+<input type="text" placeholder="Filter by First Name" #filter
+ [(ngModel)]="listFilter" />
+ <!-- <button class="primary" type="button"
+ (click)="filterResults(filter.value)">Search</button> -->
+  </div>
+
+
 
 
 <table datatable class="centre table table-bordered" >
     <thead>
-      <tr>
+      <tr >
         <th>UserId</th>
         <th>First Name</th>
-        <th>Last name</th>
+        <th>Last Name</th>
         <th>Email</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of _users">
+      <tr *ngFor="let user of _users | paginate:{
+        itemsPerPage : tableSize, 
+        currentPage: page, 
+        totalItems: count}; let i=index "
+     >
         <td> {{ user.userId}}</td>
-        <td>  <a [routerLink]="['/user', user.userId]" >
-        {{user.firstName}}
-      </a>
-    </td>
-       
+       <td>{{user.firstName}}</td>
         <td> {{ user.lastName}}</td>
         <td> {{ user.email}}</td>
-        <td>{{user.actions}}
-            <a [routerLink] = "['/user',user.userId ]" class="btn btn-success">Edit</a> 
+        <td>
+            <!-- <a [routerLink] = "['/_users/user.userId/edit']" class="btn btn-success">Edit</a>  -->
+            <button (click)="editEmployee(user)">Edit</button>
             <!-- <a [routerLink]="" (click)="openFirstName(userForm)">{{user.firstName}}</a> -->
             <!-- <a class="btn btn-danger">Update</a> -->
 
         </td>
+      
       </tr>
+
+     
     </tbody>
+
   </table>
+  <div class="pagination">
+    <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+    ></pagination-controls>
+  </div>
+
+</div>
 </div>
 </div>

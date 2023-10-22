@@ -29,7 +29,7 @@ background: #392F8B;
     background-color:  #392F8B;
 }
 
-.vertical-border-right{
+/* .vertical-border-right{
   border-right: 1px;
     margin-right: 0px;
     height: 1100px;
@@ -39,7 +39,7 @@ top: 40px;
 bottom: 0;
 right: 0;
 background-color: #392F8B;
-}
+} */
 
 .seperationline{
     margin-top: 10px; 
@@ -64,7 +64,7 @@ nav li {
 
 nav a {
 color: #2F51BC;
-font-family: ' Calibri';
+/* font-family: ' Calibri'; */
 font-size: 19px;
 font-style: normal;
 font-weight: 500;
@@ -105,8 +105,8 @@ margin-left: 100px;
  .sub-header p{
     color: #FFF;
     text-align: center;
-    font-family: Roboto;
-    font-size: 17px;
+    /* font-family: Roboto; */
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;

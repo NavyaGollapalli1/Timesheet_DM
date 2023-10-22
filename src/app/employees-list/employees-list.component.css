@@ -8,5 +8,21 @@ table, th, td {
     width: 1000px;  
     text-align: center;  
     font-size: 15px;  
-    }    
+    } 
+    
+ .pagination{
+    margin-left: 700px;
 
+ color: #173170;
+ }
+
+
+ .super-box{
+   margin:0 auto; 
+ width:1200px ;
+ padding:2px; 
+ background: white;
+ /* border:0.5px solid grey; */
+ opacity: 0.5px;
+  margin-top: 7px; 
+ }

@@ -1,0 +1,9 @@
+.super-box{
+    margin:0 auto; 
+width:1200px ;
+padding:8px; 
+background:#f9f9f9;
+/* border:2px solid grey; */
+opacity: 0.5px;
+ margin-top: 7px; 
+}
